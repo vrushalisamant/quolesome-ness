@@ -35,10 +35,10 @@ def load_quotes():
     '''
     Loads quotes data (4 columns: quote, author, tags, likes)
     '''
-    df = pd.read_csv('quotes_likes/quotes_likes_0-100K.csv', header=0, encoding='utf-8')
-    df = df[['quote', 'author', 'tags', 'likes']]
+    df = pd.read_csv('quotes_likes/new_quotes.csv', header=0, encoding='utf-8')
+    df = df[['quote', 'author', 'tags', 'likes','sentiment']]
     df['tags'] = df['tags'].str.split(',')
-    df['tags'] = df['tags'].apply(lambda l: list(map(lambda element: element.strip(), l)        ) if type(l)==list else l)
+    df['tags'] = df['tags'].apply(lambda l: list(map(lambda element: element.strip(), l)) if type(l)==list else l)
     df = df[df['tags'].notnull()].reset_index(drop=True)
     #df['tags'] = df['tags'].str.split(',')
     #df = df[df['tags'].notnull()]
