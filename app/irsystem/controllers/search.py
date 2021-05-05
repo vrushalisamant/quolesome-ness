@@ -7,9 +7,8 @@ import os
 import sys
 from nltk.tokenize import TreebankWordTokenizer
 from collections import Counter
-from gensim import similarities, corpora, models, downloader
+from gensim import similarities, corpora, models
 from nltk.corpus import stopwords
-from nltk import download
 import ssl
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
