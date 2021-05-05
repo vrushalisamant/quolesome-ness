@@ -23,7 +23,6 @@ except AttributeError:
     pass
 else:
     ssl._create_default_https_context = _create_unverified_https_context
-download('stopwords')
 
 def min_max_norm(max_l, min_l, count):
     '''
